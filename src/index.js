@@ -1,17 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Home from "./App"
+import {
+  HashRouter as Router,
+  Route, Routes
+} from 'react-router-dom';
+
+import { User, Repo } from './user';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+  <Router>
+    <Routes>
+      <Route path='/' element={ <Home /> } />
+      <Route path='/user/:username' element={ <User /> } />
+      <Route path='/user/:username/repos/:repo' element={ <Repo /> } />
+    </Routes>
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  </Router>,
+  document.getElementById("root")
+);
