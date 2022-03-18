@@ -9,6 +9,6 @@ export default class Home extends React.Component {
   },3000);
   }
   render() {
-    return (<div >see me </div>)
+    return (<div >Dcard web frontend intern homework！</div>)
   }
 }
